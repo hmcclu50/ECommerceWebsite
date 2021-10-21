@@ -10,6 +10,6 @@ namespace ECommerceWebsite.Models
         public int CustomerID { get; set; }
         public string CustomerName { get; set; }
 
-        public string CustomAdress { get; set; }
+        public string CustomerAddress { get; set; }
     }
 }
