@@ -11,5 +11,8 @@ namespace ECommerceWebsite.Models
         public int CustomerID { get; set; }
         public Customer customer { get; set; }
         public DateTime Date { get; set; }
+
+        // Customers will have option to select Billing Address or choose different Shipping Address
+        public string ShippingAddress { get; set; }
     }
 }
