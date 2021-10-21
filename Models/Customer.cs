@@ -7,5 +7,8 @@ namespace ECommerceWebsite.Models
 {
     public class Customer
     {
+        public string CustomerName { get; set; }
+
+        public string CustomAdress { get; set; }
     }
 }
