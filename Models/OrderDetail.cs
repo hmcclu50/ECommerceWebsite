@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace ECommerceWebsite.Models
 {
-    public class OrderDetails
+    public class OrderDetail
     {
-        public int OrderDetailsID { get; set; }
+        public int OrderDetailID { get; set; }
         public int OrderHeaderID { get; set; }
         public OrderHeader order { get; set; }
         public int ProductID { get; set; }
