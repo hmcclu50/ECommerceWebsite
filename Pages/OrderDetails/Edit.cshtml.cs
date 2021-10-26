@@ -39,7 +39,7 @@ namespace ECommerceWebsite.Pages.OrderDetails
                 return NotFound();
             }
            ViewData["OrderHeaderID"] = new SelectList(_context.Set<OrderHeader>(), "OrderHeaderID", "OrderHeaderID");
-           ViewData["ProductID"] = new SelectList(_context.Set<Product>(), "ProductID", "ProductID");
+            ViewData["ProductID"] = new SelectList(_context.Set<Models.Product>(), "ProductID", "ProductID");
             return Page();
         }
 

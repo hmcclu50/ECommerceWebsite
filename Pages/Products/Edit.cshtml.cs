@@ -21,7 +21,7 @@ namespace ECommerceWebsite.Pages.Products
         }
 
         [BindProperty]
-        public Product Product { get; set; }
+        public Models.Product Product { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

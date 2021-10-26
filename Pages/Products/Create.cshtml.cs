@@ -25,7 +25,7 @@ namespace ECommerceWebsite.Pages.Products
         }
 
         [BindProperty]
-        public Product Product { get; set; }
+        public Models.Product Product { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
