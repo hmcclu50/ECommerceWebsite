@@ -18,7 +18,7 @@ namespace ECommerceWebsite.Data
 
             var Product = new Product[]
          {
-                new Product{ProductID="Carson",ProductName="",ProductPrice= 9.99, ProductDescription = " Alyssa is dumb"},
+                new Product{ProductID=1,ProductName="",ProductPrice= 9.99, ProductDescription = " Alyssa is dumb"},
                
          };
         }
