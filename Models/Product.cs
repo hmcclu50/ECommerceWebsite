@@ -12,7 +12,7 @@ namespace ECommerceWebsite.Models
         [Display(Name="Product Name")]
         public string ProductName { get; set; }
         [Display(Name ="Product Price")]
-        public double ProductPrice { get; set; }
+        public decimal ProductPrice { get; set; }
         [Display(Name ="Product Description")]
         public string ProductDescription { get; set; }
     }
