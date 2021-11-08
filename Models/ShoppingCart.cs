@@ -7,5 +7,6 @@ namespace ECommerceWebsite.Models
 {
     public class ShoppingCart
     {
+
     }
 }

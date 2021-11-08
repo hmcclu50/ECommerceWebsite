@@ -9,9 +9,10 @@ namespace ECommerceWebsite.Models
     public class Customer
     {
         public int CustomerID { get; set; }
+
         [Display(Name="Customer Name")]
         public string CustomerName { get; set; }
-        [Display (Name="Billing Address")]
+        [Display(Name = "Billing Address")]
         public string BillingAddress { get; set; }
     }
 }
