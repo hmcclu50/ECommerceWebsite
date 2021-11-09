@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
+ using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.Customers
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;

@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
+ using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.OrderDetails
 {
+    [Authorize]
     public class DeleteModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;

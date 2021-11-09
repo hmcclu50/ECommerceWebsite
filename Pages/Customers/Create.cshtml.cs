@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace ECommerceWebsite.Pages.Customers
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;

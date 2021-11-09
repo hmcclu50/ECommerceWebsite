@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
+    using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.Products
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
