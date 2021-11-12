@@ -5,6 +5,34 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to the Totally Legal Tech Store™</h1>
+    <h2>We sell totally not stolen tech for cheap!</h2>
+    <p>Made by Hunter McClurg, Alyssa Scudder, and Christopher Albers-Hardebeck</p>
+</div>
+
+<div class="card-columns">
+    @foreach (var item in Model.Product)
+    {
+        <div class="card">
+            <div style="height:200px; background-color:silver"></div>
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.ProductName)</h5>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
+                <form class="form-inline">
+                    <div class="col-md">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            @for (int i = 0; i < 10; i++)
+                            {
+                                <option>@i.ToString()</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md">
+                        <button type="submit" class="btn btn-primary">Add To Cart</button>
+                    </div>
+                </form>
+                <p class="card-text"><small class="text-muted">$@Html.DisplayFor(modelItem => item.ProductPrice)</small></p>
+            </div>
+        </div>
+    }
 </div>

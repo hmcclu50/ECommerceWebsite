@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ECommerceWebsite.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -10,16 +12,17 @@ namespace ECommerceWebsite.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ECommerceWebsite.Data.ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
+        public IList<Product> Product { get; set; }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-
+            Product = await _context.Product.ToListAsync();
         }
     }
 }
