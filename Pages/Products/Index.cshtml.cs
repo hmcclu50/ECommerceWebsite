@@ -31,8 +31,8 @@ namespace ECommerceWebsite.Pages.Products
         public async Task OnGetAsync(string sortOrder, string searchString)
         {
             // using System;
-            NameSort = String.IsNullOrEmpty(sortOrder) ? "prod_name" : "prod_desc";
-            PriceSort = String.IsNullOrEmpty(sortOrder) ? "prod_price" : "";
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "prod_name" : "";
+            PriceSort = String.IsNullOrEmpty(sortOrder) ? "prod_price" : "prod_price";
 
             CurrentFilter = searchString;
 

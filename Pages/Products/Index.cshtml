@@ -31,36 +31,35 @@
                 </a>
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                <a asp-page="./Index" asp-route-sortOrder="@Model.PriceSort">
                     @Html.DisplayNameFor(model => model.Product[0].ProductPrice)
                 </a>
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
                     @Html.DisplayNameFor(model => model.Product[0].ProductDescription)
-                </a>
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Product) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductDescription)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ProductID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ProductID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ProductID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Product) 
+        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductDescription)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.ProductID">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.ProductID">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.ProductID">Delete</a>
+                    </td>
+                </tr>
+        }
     </tbody>
 </table>
