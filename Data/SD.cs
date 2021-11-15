@@ -5,9 +5,13 @@ using System.Threading.Tasks;
 
 namespace ECommerceWebsite.Data
 {
-    //public class SD
-    //{
-    //    public const string AdminEndUser = "Admin";
-    //    public const string CustomerEndUser = "Customer";
-    //}
+    public class SD
+    {
+        public const string AdminEndUser = "Admin";
+        public const string CustomerEndUser = "Customer";
+
+
+    }
+
+
 }

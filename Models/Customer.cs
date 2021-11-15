@@ -14,5 +14,9 @@ namespace ECommerceWebsite.Models
         public string CustomerName { get; set; }
         [Display(Name = "Billing Address")]
         public string BillingAddress { get; set; }
+
+
     }
+
+
 }
