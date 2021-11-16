@@ -17,12 +17,9 @@ namespace ECommerceWebsite.Data
 
             var products = new Product[]
             {
-                new Product{ProductName="Dell PC",ProductPrice=700, ProductDescription="OptiPlex 3080 Desktop PC - Dell"},
-                new Product{ProductName="HP Laptop",ProductPrice=600, ProductDescription="17.3 Inch Laptop - HP"},
-                new Product{ProductName="ViewSonic Monitor",ProductPrice=150, ProductDescription="24 Inch Monitor - ViewSonic"},
-                new Product{ProductName="Microsft Mouse",ProductPrice=45, ProductDescription="Bluetooth Mouse - Microsoft"},
-                new Product{ProductName="Microsft Keyboard",ProductPrice=50, ProductDescription="Bluetooth Keyboard - Microsoft"},
-                new Product{ProductName="Logitech Headset",ProductPrice=75, ProductDescription="Bluetooth Headset - Logitech"},
+                new Product{ProductName="Test Product 1",ProductPrice=10, ProductDescription="Test Product 1"},
+                new Product{ProductName="Test Product 2",ProductPrice=15, ProductDescription="Test Product 2"},
+                new Product{ProductName="Test Product 3",ProductPrice=20, ProductDescription="Test Product 3"},
             };
 
             context.Product.AddRange(products);
