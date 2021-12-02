@@ -14,9 +14,15 @@ namespace ECommerceWebsite.Data
 
             var products = new Product[]
             {
-                new Product{ProductName="Dell PC",ProductPrice=700, ProductDescription="Dell OptiPlex 3080 Desktop PC"},
-                new Product{ProductName="HP Laptop",ProductPrice=600, ProductDescription="HP 17.3 inch Laptop"},
-                new Product{ProductName="Acer Monitor",ProductPrice=150, ProductDescription="Acer 24 inch Monitor"},
+                new Product{ProductName="Dell PC", ProductPrice=700, ProductDescription="Dell OptiPlex 3080 Desktop PC"},
+                new Product{ProductName="HP Laptop", ProductPrice=600, ProductDescription="HP 17.3 inch Laptop"},
+                new Product{ProductName="Acer Monitor", ProductPrice=150, ProductDescription="Acer 24 inch Monitor"},
+                new Product{ProductName="Microsoft Keyboard", ProductPrice=50, ProductDescription="Micorosft Bluetooth Keyboard"},
+                new Product{ProductName="Microsoft Mouse", ProductPrice=35, ProductDescription="Micorosft Bluetooth Mouse"},
+                new Product{ProductName="Logitech Headset", ProductPrice=75, ProductDescription="Logitech Bluetooth Headset"},
+                new Product{ProductName="Monitor Stand", ProductPrice=120, ProductDescription="Dual Monitor Adjustable Stand"},
+                new Product{ProductName="Office Desk", ProductPrice=200, ProductDescription="L-Shaped Office Desk"},
+                new Product{ProductName="Office Chair", ProductPrice=100, ProductDescription="Staples Office Chair"},
             };
 
             var user = new IdentityUser("Admin@test.com");
