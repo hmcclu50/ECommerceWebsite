@@ -14,7 +14,7 @@ namespace ECommerceWebsite.Data
             {
                 new Product{ProductName="Dell PC", ProductPrice=700, ProductDescription="Dell OptiPlex 3080 Desktop PC"},
                 new Product{ProductName="HP Laptop", ProductPrice=600, ProductDescription="HP 17.3 inch Laptop"},
-                new Product{ProductName="Acer Monitor", ProductPrice=150, ProductDescription="Acer 24 inch Monitor"},
+                new Product{ProductName="ViewSonic Monitor", ProductPrice=150, ProductDescription="ViewSonic 24 inch Monitor"},
                 new Product{ProductName="Microsoft Keyboard", ProductPrice=50, ProductDescription="Micorosft Bluetooth Keyboard"},
                 new Product{ProductName="Microsoft Mouse", ProductPrice=35, ProductDescription="Micorosft Bluetooth Mouse"},
                 new Product{ProductName="Logitech Headset", ProductPrice=75, ProductDescription="Logitech Bluetooth Headset"},

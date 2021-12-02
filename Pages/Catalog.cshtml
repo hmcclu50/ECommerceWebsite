@@ -17,10 +17,9 @@
 <div class="card-columns">
 @foreach (var item in Model.Product)
 {
-    var myURL = "./Images" + item.ProductID + ".jpg";
+    var myURL = "./Images/" + item.ProductName + ".jpg";
     <div class="card">
-        <img src="@myURL" class="card-img-top" alt="...">
-        <div style="height:200px; background-color:silver"></div>
+        <img src="@myURL" class="card-img-top" style="height:200px; width:100%; text-align:center" alt="...">
         <div class="card-body">
             <h5 class="card-title">@Html.DisplayFor(modelItem => item.ProductName)</h5>
             <p class="card-text">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
