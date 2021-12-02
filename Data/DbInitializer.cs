@@ -10,8 +10,6 @@ namespace ECommerceWebsite.Data
     {
         public static void Initialize(ApplicationDbContext context)
         {
-            
-
             var products = new Product[]
             {
                 new Product{ProductName="Dell PC", ProductPrice=700, ProductDescription="Dell OptiPlex 3080 Desktop PC"},
@@ -45,12 +43,9 @@ namespace ECommerceWebsite.Data
             var userRole = new IdentityUserRole<string>();
             userRole.RoleId = role.Id;
             userRole.UserId = user.Id;
-
-
-
             context.UserRoles.Add(userRole);
-
             context.SaveChanges();
+
 
             context.Product.AddRange(products);
             context.SaveChanges();
