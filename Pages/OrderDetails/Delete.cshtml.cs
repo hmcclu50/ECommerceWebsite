@@ -11,7 +11,7 @@ using ECommerceWebsite.Models;
 
 namespace ECommerceWebsite.Pages.OrderDetails
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class DeleteModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;

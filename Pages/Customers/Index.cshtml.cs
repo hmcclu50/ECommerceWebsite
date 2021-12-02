@@ -11,7 +11,7 @@ using ECommerceWebsite.Models;
 
 namespace ECommerceWebsite.Pages.Customers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;

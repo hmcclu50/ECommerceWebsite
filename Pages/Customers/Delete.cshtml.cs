@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.Customers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class DeleteModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;

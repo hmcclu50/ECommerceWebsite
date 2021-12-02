@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.Customers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class CreateModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;

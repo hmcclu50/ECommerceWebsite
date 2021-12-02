@@ -12,7 +12,7 @@ using ECommerceWebsite.Models;
 
 namespace ECommerceWebsite.Pages.Products
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class EditModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
