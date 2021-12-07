@@ -6,10 +6,10 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li>
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/ShoppingCart">View Cart</a>
+            <a class="nav-link text-dark" asp-page="/ShoppingCart">View Cart</a>
         </li>
         <li>
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/ShoppingCart">View Orders</a>
+            <a class="nav-link text-dark" asp-page="/ViewOrders">View Orders</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
@@ -23,7 +23,7 @@
     else
     {
         <li>
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/ShoppingCart">View Cart</a>
+            <a class="nav-link text-dark" asp-page="/ShoppingCart">View Cart</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
