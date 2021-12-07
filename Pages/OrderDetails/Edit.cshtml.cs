@@ -8,12 +8,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.OrderDetails
 {
-
-    [Authorize(Roles = "Admin")]
     public class EditModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
@@ -33,16 +30,12 @@ namespace ECommerceWebsite.Pages.OrderDetails
                 return NotFound();
             }
 
-            OrderDetail = await _context.OrderDetails
-                .Include(o => o.order)
-                .Include(o => o.product).FirstOrDefaultAsync(m => m.OrderDetailID == id);
+            OrderDetail = await _context.OrderDetails.FirstOrDefaultAsync(m => m.OrderDetailId == id);
 
             if (OrderDetail == null)
             {
                 return NotFound();
             }
-           ViewData["OrderHeaderID"] = new SelectList(_context.Set<OrderHeader>(), "OrderHeaderID", "OrderHeaderID");
-            ViewData["ProductID"] = new SelectList(_context.Set<Models.Product>(), "ProductID", "ProductID");
             return Page();
         }
 
@@ -63,7 +56,7 @@ namespace ECommerceWebsite.Pages.OrderDetails
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!OrderDetailExists(OrderDetail.OrderDetailID))
+                if (!OrderDetailExists(OrderDetail.OrderDetailId))
                 {
                     return NotFound();
                 }
@@ -78,7 +71,7 @@ namespace ECommerceWebsite.Pages.OrderDetails
 
         private bool OrderDetailExists(int id)
         {
-            return _context.OrderDetails.Any(e => e.OrderDetailID == id);
+            return _context.OrderDetails.Any(e => e.OrderDetailId == id);
         }
     }
 }

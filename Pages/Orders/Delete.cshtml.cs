@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
-using Microsoft.AspNetCore.Authorization;
 
-namespace ECommerceWebsite.Pages.Customers
+namespace ECommerceWebsite.Pages.Orders
 {
-    [Authorize(Roles = "Admin")]
     public class DeleteModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
@@ -22,7 +20,7 @@ namespace ECommerceWebsite.Pages.Customers
         }
 
         [BindProperty]
-        public Customer Customer { get; set; }
+        public Order Order { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -31,9 +29,9 @@ namespace ECommerceWebsite.Pages.Customers
                 return NotFound();
             }
 
-            Customer = await _context.Customer.FirstOrDefaultAsync(m => m.CustomerID == id);
+            Order = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == id);
 
-            if (Customer == null)
+            if (Order == null)
             {
                 return NotFound();
             }
@@ -47,11 +45,11 @@ namespace ECommerceWebsite.Pages.Customers
                 return NotFound();
             }
 
-            Customer = await _context.Customer.FindAsync(id);
+            Order = await _context.Orders.FindAsync(id);
 
-            if (Customer != null)
+            if (Order != null)
             {
-                _context.Customer.Remove(Customer);
+                _context.Orders.Remove(Order);
                 await _context.SaveChangesAsync();
             }
 

@@ -13,21 +13,31 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="OrderDetail.OrderDetailID" />
+            <input type="hidden" asp-for="OrderDetail.OrderDetailId" />
             <div class="form-group">
-                <label asp-for="OrderDetail.OrderHeaderID" class="control-label"></label>
-                <select asp-for="OrderDetail.OrderHeaderID" class="form-control" asp-items="ViewBag.OrderHeaderID"></select>
-                <span asp-validation-for="OrderDetail.OrderHeaderID" class="text-danger"></span>
+                <label asp-for="OrderDetail.OrderId" class="control-label"></label>
+                <select asp-for="OrderDetail.OrderId" class="form-control" asp-items="ViewBag.OrderId"></select>
+                <span asp-validation-for="OrderDetail.OrderId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="OrderDetail.ProductID" class="control-label"></label>
-                <select asp-for="OrderDetail.ProductID" class="form-control" asp-items="ViewBag.ProductID"></select>
-                <span asp-validation-for="OrderDetail.ProductID" class="text-danger"></span>
+                <label asp-for="OrderDetail.Username" class="control-label"></label>
+                <input asp-for="OrderDetail.Username" class="form-control" />
+                <span asp-validation-for="OrderDetail.Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDetail.ProductId" class="control-label"></label>
+                <input asp-for="OrderDetail.ProductId" class="form-control" />
+                <span asp-validation-for="OrderDetail.ProductId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="OrderDetail.Quantity" class="control-label"></label>
                 <input asp-for="OrderDetail.Quantity" class="form-control" />
                 <span asp-validation-for="OrderDetail.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDetail.UnitPrice" class="control-label"></label>
+                <input asp-for="OrderDetail.UnitPrice" class="form-control" />
+                <span asp-validation-for="OrderDetail.UnitPrice" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

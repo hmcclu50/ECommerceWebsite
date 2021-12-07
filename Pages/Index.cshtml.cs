@@ -34,7 +34,7 @@ namespace ECommerceWebsite.Pages
 
             CurrentFilter = searchString;
 
-            IQueryable<Product> productsSort = from s in _context.Product
+            IQueryable<Product> productsSort = from s in _context.Products
                                                select s;
 
             if (!String.IsNullOrEmpty(searchString))

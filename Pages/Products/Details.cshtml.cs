@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
-    using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.Products
 {
-    [Authorize(Roles = "Admin")]
     public class DetailsModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
@@ -21,7 +19,7 @@ namespace ECommerceWebsite.Pages.Products
             _context = context;
         }
 
-        public Models.Product Product { get; set; }
+        public Product Product { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,7 +28,7 @@ namespace ECommerceWebsite.Pages.Products
                 return NotFound();
             }
 
-            Product = await _context.Product.FirstOrDefaultAsync(m => m.ProductID == id);
+            Product = await _context.Products.FirstOrDefaultAsync(m => m.ProductID == id);
 
             if (Product == null)
             {

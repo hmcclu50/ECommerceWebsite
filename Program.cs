@@ -27,7 +27,6 @@ namespace ECommerceWebsite
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
                     context.Database.EnsureCreated();
-                    DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {

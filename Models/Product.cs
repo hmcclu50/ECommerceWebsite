@@ -8,12 +8,16 @@ namespace ECommerceWebsite.Models
 {
     public class Product
     {
+        [ScaffoldColumn(false)]
         public int ProductID { get; set; }
-        [Display(Name="Product Name")]
+
+        [Required, StringLength(100), Display(Name = "Name")]
         public string ProductName { get; set; }
-        [Display(Name ="Product Price")]
+
+        [Display(Name = "Price")]
         public decimal ProductPrice { get; set; }
-        [Display(Name ="Product Description")]
+
+        [Required, StringLength(10000), Display(Name = "Product Description"), DataType(DataType.MultilineText)]
         public string ProductDescription { get; set; }
     }
 }

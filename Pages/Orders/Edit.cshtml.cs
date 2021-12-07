@@ -8,11 +8,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
-    using Microsoft.AspNetCore.Authorization;
 
-namespace ECommerceWebsite.Pages.OrderHeaders
+namespace ECommerceWebsite.Pages.Orders
 {
-    [Authorize(Roles = "Admin")]
     public class EditModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
@@ -23,7 +21,7 @@ namespace ECommerceWebsite.Pages.OrderHeaders
         }
 
         [BindProperty]
-        public OrderHeader OrderHeader { get; set; }
+        public Order Order { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -32,14 +30,12 @@ namespace ECommerceWebsite.Pages.OrderHeaders
                 return NotFound();
             }
 
-            OrderHeader = await _context.OrderHeader
-                .Include(o => o.customer).FirstOrDefaultAsync(m => m.OrderHeaderID == id);
+            Order = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == id);
 
-            if (OrderHeader == null)
+            if (Order == null)
             {
                 return NotFound();
             }
-           ViewData["CustomerID"] = new SelectList(_context.Customer, "CustomerID", "CustomerID");
             return Page();
         }
 
@@ -52,7 +48,7 @@ namespace ECommerceWebsite.Pages.OrderHeaders
                 return Page();
             }
 
-            _context.Attach(OrderHeader).State = EntityState.Modified;
+            _context.Attach(Order).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +56,7 @@ namespace ECommerceWebsite.Pages.OrderHeaders
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!OrderHeaderExists(OrderHeader.OrderHeaderID))
+                if (!OrderExists(Order.OrderId))
                 {
                     return NotFound();
                 }
@@ -73,9 +69,9 @@ namespace ECommerceWebsite.Pages.OrderHeaders
             return RedirectToPage("./Index");
         }
 
-        private bool OrderHeaderExists(int id)
+        private bool OrderExists(int id)
         {
-            return _context.OrderHeader.Any(e => e.OrderHeaderID == id);
+            return _context.Orders.Any(e => e.OrderId == id);
         }
     }
 }

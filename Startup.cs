@@ -35,6 +35,7 @@ namespace ECommerceWebsite
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
+            services.AddSession();
         }
 
  
@@ -68,6 +69,8 @@ namespace ECommerceWebsite
             {
                 endpoints.MapRazorPages();
             });
+
+            app.UseSession();
         }
     }
 }

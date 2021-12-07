@@ -1,0 +1,59 @@
+﻿@page
+@model ECommerceWebsite.Pages.ShoppingCartModel
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+
+<h2>Shopping Cart</h2>
+
+<!-- Using placeholders due to broken ShoppingCartActions.cs.-->
+<!-- The above class can pull every CartItem as a list and also calculate total quantity, if it worked-->
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@for(int i=0; i<5; i++) {
+        <tr>
+            <td>
+                Placeholder @i
+            </td>
+            <td>
+                0 
+            </td>
+            <td>
+                $0.00
+            </td>
+        </tr>
+}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>
+                <b>Totals</b>
+            </td>
+            <td>
+                <b>0</b>
+            </td>
+            <td>
+                <b>$0.00</b>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<br />
+
+<a asp-page="Checkout" style="text-decoration:none;">Proceed to Checkout</a>

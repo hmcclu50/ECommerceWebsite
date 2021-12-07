@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
- using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.OrderDetails
 {
-    [Authorize(Roles = "Admin")]
     public class DeleteModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
@@ -31,9 +29,7 @@ namespace ECommerceWebsite.Pages.OrderDetails
                 return NotFound();
             }
 
-            OrderDetail = await _context.OrderDetails
-                .Include(o => o.order)
-                .Include(o => o.product).FirstOrDefaultAsync(m => m.OrderDetailID == id);
+            OrderDetail = await _context.OrderDetails.FirstOrDefaultAsync(m => m.OrderDetailId == id);
 
             if (OrderDetail == null)
             {

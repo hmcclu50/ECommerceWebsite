@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.OrderDetails
 {
-    [Authorize(Roles = "Admin")]
     public class CreateModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
@@ -23,8 +21,6 @@ namespace ECommerceWebsite.Pages.OrderDetails
 
         public IActionResult OnGet()
         {
-        ViewData["OrderHeaderID"] = new SelectList(_context.Set<OrderHeader>(), "OrderHeaderID", "OrderHeaderID");
-            ViewData["ProductID"] = new SelectList(_context.Set<Models.Product>(), "ProductID", "ProductID");
             return Page();
         }
 

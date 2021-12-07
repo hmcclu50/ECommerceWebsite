@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
-    using Microsoft.AspNetCore.Authorization;
 
-namespace ECommerceWebsite.Pages.OrderHeaders
+namespace ECommerceWebsite.Pages.Orders
 {
-    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
@@ -21,12 +19,11 @@ namespace ECommerceWebsite.Pages.OrderHeaders
             _context = context;
         }
 
-        public IList<OrderHeader> OrderHeader { get;set; }
+        public IList<Order> Order { get;set; }
 
         public async Task OnGetAsync()
         {
-            OrderHeader = await _context.OrderHeader
-                .Include(o => o.customer).ToListAsync();
+            Order = await _context.Orders.ToListAsync();
         }
     }
 }

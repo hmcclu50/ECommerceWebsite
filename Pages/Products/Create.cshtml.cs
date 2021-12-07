@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.Products
 {
-    [Authorize(Roles = "Admin")]
     public class CreateModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
@@ -27,7 +25,7 @@ namespace ECommerceWebsite.Pages.Products
         }
 
         [BindProperty]
-        public Models.Product Product { get; set; }
+        public Product Product { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -37,7 +35,7 @@ namespace ECommerceWebsite.Pages.Products
                 return Page();
             }
 
-            _context.Product.Add(Product);
+            _context.Products.Add(Product);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

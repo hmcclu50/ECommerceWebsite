@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using ECommerceWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using ECommerceWebsite.Logic;
 
 namespace ECommerceWebsite.Pages
 {
@@ -32,7 +34,7 @@ namespace ECommerceWebsite.Pages
 
             CurrentFilter = searchString;
 
-            IQueryable<Product> productsSort = from s in _context.Product
+            IQueryable<Product> productsSort = from s in _context.Products
                                                select s;
 
             if (!String.IsNullOrEmpty(searchString))
@@ -60,5 +62,20 @@ namespace ECommerceWebsite.Pages
             Product = await productsSort.AsNoTracking().ToListAsync();
 
         }
+
+        // Attempt at implementing add to cart functionality but ShoppingCartActions currently doesn't work
+
+        /*
+         
+        [BindProperty]
+        public Product product { get; set; }
+
+        public async void OnPostAsync()
+        {
+            using (ShoppingCartActions Cart = new ShoppingCartActions())
+            {
+                Cart.AddToCart(product.ProductID);
+            }   
+        } */
     }
 }

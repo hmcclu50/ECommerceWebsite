@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ECommerceWebsite.Data;
 using ECommerceWebsite.Models;
- using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerceWebsite.Pages.OrderDetails
 {
-    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly ECommerceWebsite.Data.ApplicationDbContext _context;
@@ -25,9 +23,7 @@ namespace ECommerceWebsite.Pages.OrderDetails
 
         public async Task OnGetAsync()
         {
-            OrderDetail = await _context.OrderDetails
-                .Include(o => o.order)
-                .Include(o => o.product).ToListAsync();
+            OrderDetail = await _context.OrderDetails.ToListAsync();
         }
     }
 }
